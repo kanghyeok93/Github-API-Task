@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4F0672CC2758CA7900950DC4 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4F0672CB2758CA7900950DC4 /* Fonts */; };
 		7122B6EED49CA8BD58793A58 /* libPods-payhere.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CB0043FD8ECF34A4B4370E4 /* libPods-payhere.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B6FEF2DD43214A2DDB128E43 /* libPods-payhere-payhereTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 630CD6D5E2A5C00768A3AC22 /* libPods-payhere-payhereTests.a */; };
@@ -39,6 +40,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = payhere/main.m; sourceTree = "<group>"; };
 		3299397ABBB68A69559C4CBE /* Pods-payhere-payhereTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payhere-payhereTests.release.xcconfig"; path = "Target Support Files/Pods-payhere-payhereTests/Pods-payhere-payhereTests.release.xcconfig"; sourceTree = "<group>"; };
 		4065C2B05470A8028384D994 /* Pods-payhere-payhereTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-payhere-payhereTests.debug.xcconfig"; path = "Target Support Files/Pods-payhere-payhereTests/Pods-payhere-payhereTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F0672CB2758CA7900950DC4 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		5CB0043FD8ECF34A4B4370E4 /* libPods-payhere.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payhere.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		630CD6D5E2A5C00768A3AC22 /* libPods-payhere-payhereTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-payhere-payhereTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = payhere/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 				4065C2B05470A8028384D994 /* Pods-payhere-payhereTests.debug.xcconfig */,
 				3299397ABBB68A69559C4CBE /* Pods-payhere-payhereTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +129,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4F0672CB2758CA7900950DC4 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* payhere */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* payhereTests */,
@@ -243,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0672CC2758CA7900950DC4 /* Fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
