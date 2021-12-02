@@ -19,5 +19,10 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'react/sort-comp': 'off',
+    'react/destructuring-assignment': 'off',
+    'no-unused-expressions': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };
