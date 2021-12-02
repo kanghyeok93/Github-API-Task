@@ -1,5 +1,7 @@
 export const colors = {
-  Theme: '#121232',
+  Theme: '#3D58C0',
+  White: '#FFFFFF',
+  Black: '#000000',
   LightWhite: '#fffef8',
 };
 
