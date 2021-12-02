@@ -1,19 +1,19 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-function HomeScreen() {
+const HomeScreen = function () {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
     </View>
   );
-}
+};
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+const App = function () {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -21,6 +21,6 @@ function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default App;
