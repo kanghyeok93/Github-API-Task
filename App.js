@@ -5,7 +5,8 @@ import {Provider} from 'react-redux';
 import configure from './src/store/configure';
 // Screen
 import ScreenRouter from './src/screens/ScreenRouter';
-import Loading from './src/screens/global/Loading';
+// Component
+import Loading from './src/components/loading/Loading';
 
 const store = configure();
 

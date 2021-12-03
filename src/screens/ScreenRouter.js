@@ -4,10 +4,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useDispatch} from 'react-redux';
 // Screen
 import SearchScreen from './SearchScreen';
 import SearchDetailScreen from './SearchDetailScreen';
 import FavoriteScreen from './FavoriteScreen';
+// Redux
+import * as routeActions from '../store/modules/route/actions';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -38,8 +41,17 @@ const Home = () => {
 };
 
 const ScreenRouter = () => {
+  const dispatch = useDispatch();
+
+  // 네비게이션 외부에서 현재 스크린에 해당하는 이름을 가져오기 위한 작업 함수
+  const onNavigationStateChanged = state => {
+    state.routes[1]?.name
+      ? dispatch(routeActions.change_current_screen_name(state.routes[1]?.name))
+      : dispatch(routeActions.change_current_screen_name(''));
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer onStateChange={onNavigationStateChanged}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="SearchDetail" component={SearchDetailScreen} />
