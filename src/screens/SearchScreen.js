@@ -1,11 +1,10 @@
 import React from 'react';
-// Component
+// Modules
 import Ionicons from 'react-native-vector-icons/Ionicons';
+// Component
 import {SafeAreaView, View, ViewRow} from '../components/styled/View';
 import {Text} from '../components/styled/Text';
 import {ButtonBorderRadius} from '../components/styled/Button';
-// Image
-import {Image} from '../components/styled/Image';
 
 const SearchScreen = ({navigation}) => {
   return (
@@ -13,14 +12,14 @@ const SearchScreen = ({navigation}) => {
       <View paddingLeft={15} paddingRight={15}>
         <ButtonBorderRadius
           height={50}
+          paddingLeft={15}
           bgTheme
           onPress={() => navigation.navigate('SearchDetail')}>
-          <ViewRow
-            width="100%"
-            alignItems="center"
-            justifyContent="space-around">
-            <Text ftWhite>GitHub Repository Search...</Text>
+          <ViewRow width="100%" alignItems="center">
             <Ionicons name="search" size={20} color="#FFFFFF" />
+            <Text ftWhite marginLeft={15}>
+              GitHub Repository Search...
+            </Text>
           </ViewRow>
         </ButtonBorderRadius>
       </View>
