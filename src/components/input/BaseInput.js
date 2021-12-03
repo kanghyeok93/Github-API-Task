@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {View} from '../styled/View';
 import {Text} from '../styled/Text';
 import {InputBorderRadius} from '../styled/Input';
@@ -18,8 +18,7 @@ numberOfLines: 허용 라인 수             (number)
 placeholder: 인풋 placeholder          (string)
 placeholderTextColor: placeholder 색상 (string)
 maxLength: 최대 입력 길이                (number)
-
- */
+*/
 
 const BaseInput = props => {
   const height = props.height || 50;
@@ -27,8 +26,14 @@ const BaseInput = props => {
   const paddingLeft = props.paddingLeft || 10;
   const paddingRight = props.paddingRight || 10;
 
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
-    <View>
+    <View flex={1}>
       {props.label && (
         <Text ftSmall marginBottom={8} paddingLeft={25} {...props.labelColor}>
           {props.label}
@@ -44,6 +49,7 @@ const BaseInput = props => {
           maxLength={props.maxLength}
           paddingLeft={paddingLeft}
           paddingRight={paddingRight}
+          ref={inputRef}
           {...props}
         />
       </View>

@@ -3,6 +3,8 @@ export const colors = {
   White: '#FFFFFF',
   Black: '#000000',
   LightWhite: '#fffef8',
+  Gray: '#808080',
+  LightGray: '#bcbfcf',
 };
 
 // colors 적용 함수 프레임
