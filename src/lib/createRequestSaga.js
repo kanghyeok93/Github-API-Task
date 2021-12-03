@@ -17,23 +17,21 @@ export default function createRequestSaga(type, request) {
     if (!skipLoadingActionTypes.includes(type)) {
       yield put(startLoading(type));
     }
-
     const response = yield call(request, action.payload);
-    // response.statusCode : nest server / response.responseStatus : wallet
     const statusCode = response.statusCode || response.responseStatus;
-    if (statusCode >= 200 && statusCode < 300) {
-      // 성공인 경우
-      yield put({
-        type: SUCCESS,
-        payload: response || action.payload,
-        meta: response,
-      });
-    } else if (statusCode >= 400) {
+    if (statusCode >= 400) {
       // 실패인 경우
       yield put({
         type: FAILED,
         payload: response || action.payload,
         error: true,
+      });
+    } else {
+      // 성공인 경우
+      yield put({
+        type: SUCCESS,
+        payload: response || action.payload,
+        meta: response,
       });
     }
 
