@@ -13,3 +13,15 @@ export const getRepo = async keyword => {
   console.log('getRepo result ===> ', result.data);
   return JSON.parse(result.data);
 };
+
+export const getRepoIssue = async ({repo, page}) => {
+  const method = 'GET';
+  const url = ROUTES.GIT.REPO_ISSUE;
+
+  const result = await RNFetchBlob.config({
+    trusty: true,
+  }).fetch(method, `${url}/${repo}/issues?page=${page}`, headers());
+
+  console.log('getRepoIssue result ===> ', result.data);
+  return JSON.parse(result.data);
+};
