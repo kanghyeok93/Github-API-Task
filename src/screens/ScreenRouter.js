@@ -11,6 +11,9 @@ import SearchDetailScreen from './SearchDetailScreen';
 import FavoriteScreen from './FavoriteScreen';
 // Redux
 import * as routeActions from '../store/modules/route/actions';
+import * as gitActions from '../store/modules/git/actions';
+// utils
+import {getData} from '../utils/functions';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,10 +47,18 @@ const ScreenRouter = () => {
   const dispatch = useDispatch();
 
   // 네비게이션 외부에서 현재 스크린에 해당하는 이름을 가져오기 위한 작업 함수
-  const onNavigationStateChanged = state => {
+  const onNavigationStateChanged = async state => {
     state.routes[1]?.name
       ? dispatch(routeActions.change_current_screen_name(state.routes[1]?.name))
       : dispatch(routeActions.change_current_screen_name(''));
+
+    if (JSON.parse(await getData('repo'))) {
+      dispatch(
+        gitActions.change_favorite_repo(JSON.parse(await getData('repo'))),
+      );
+    } else {
+      dispatch(gitActions.change_favorite_repo([]));
+    }
   };
 
   return (

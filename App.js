@@ -6,7 +6,8 @@ import configure from './src/store/configure';
 // Screen
 import ScreenRouter from './src/screens/ScreenRouter';
 // Component
-import Loading from './src/components/loading/Loading';
+import GlobalModal from './src/components/modal/GlobalModal';
+import ToastMessage from './src/components/toast/ToastMessage';
 
 const store = configure();
 
@@ -14,7 +15,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <ScreenRouter />
-      <Loading />
+      <ToastMessage />
+      <GlobalModal />
     </Provider>
   );
 };
