@@ -13,10 +13,8 @@ export default function createRequestSaga(type, request) {
   const FAILED = `${type}_FAILED`;
 
   return function* (action) {
-    // 특정 액션 타입들을 제외하고 로딩
-    if (!skipLoadingActionTypes.includes(type)) {
-      yield put(startLoading(type));
-    }
+    yield put(startLoading(type)); // 로딩 시작
+
     const response = yield call(request, action.payload);
     const statusCode = response.statusCode || response.responseStatus;
     if (statusCode >= 400) {

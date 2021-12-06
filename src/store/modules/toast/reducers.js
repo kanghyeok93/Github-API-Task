@@ -9,7 +9,6 @@ const initialState = {
 const global = handleActions(
   {
     [TOAST.CHANGE_TOAST_MESSAGE]: (state, action) => {
-      console.log('CHANGE_TOAST_MESSAGE => ', action.payload);
       return produce(state, draft => {
         draft.toastMessage = action.payload;
       });

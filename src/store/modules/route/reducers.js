@@ -9,7 +9,6 @@ const initialState = {
 const route = handleActions(
   {
     [ROUTE.CHANGE_CURRENT_SCREEN_NAME]: (state, action) => {
-      console.log('CHANGE_CURRENT_SCREEN_NAME => ', action.payload);
       return produce(state, draft => {
         draft.screenName = action.payload;
       });

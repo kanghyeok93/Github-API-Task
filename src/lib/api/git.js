@@ -10,7 +10,6 @@ export const getRepo = async keyword => {
     trusty: true,
   }).fetch(method, `${url}?${objToQueryString(keyword)}`, headers());
 
-  console.log('getRepo result ===> ', result.data);
   return JSON.parse(result.data);
 };
 
@@ -22,6 +21,5 @@ export const getRepoIssue = async ({repo, page}) => {
     trusty: true,
   }).fetch(method, `${url}/${repo}/issues?page=${page}`, headers());
 
-  console.log('getRepoIssue result ===> ', result.data);
   return JSON.parse(result.data);
 };
