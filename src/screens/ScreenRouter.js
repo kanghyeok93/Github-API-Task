@@ -1,18 +1,14 @@
 import * as React from 'react';
-// Modules
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useDispatch} from 'react-redux';
-// Screen
 import SearchScreen from './SearchScreen';
 import SearchDetailScreen from './SearchDetailScreen';
 import FavoriteScreen from './FavoriteScreen';
-// Redux
 import * as routeActions from '../store/modules/route/actions';
 import * as gitActions from '../store/modules/git/actions';
-// utils
 import {getData} from '../utils/functions';
 
 const Stack = createNativeStackNavigator();

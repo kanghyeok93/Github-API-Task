@@ -1,15 +1,12 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-// Modules
 import {shallowEqual, useDispatch, useSelector} from 'react-redux';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// Component
 import {ActivityIndicator, FlatList} from 'react-native';
 import {SafeAreaView, View, ViewRow} from '../components/styled/View';
 import {ButtonBorderRadius} from '../components/styled/Button';
 import {Text} from '../components/styled/Text';
 import BaseInput from '../components/input/BaseInput';
 import RepoItem from '../components/git/RepoItem';
-// Redux
 import * as gitActions from '../store/modules/git/actions';
 
 const SearchDetailScreen = ({navigation}) => {

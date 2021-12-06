@@ -1,7 +1,5 @@
 import React from 'react';
-// Modules
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// Component
 import {SafeAreaView, View, ViewRow} from '../components/styled/View';
 import {Text} from '../components/styled/Text';
 import {ButtonBorderRadius} from '../components/styled/Button';
