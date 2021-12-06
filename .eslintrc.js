@@ -24,5 +24,8 @@ module.exports = {
     'no-unused-expressions': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-use-before-define': 'off',
+    'react/no-unstable-nested-components': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
 };
