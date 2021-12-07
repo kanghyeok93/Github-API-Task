@@ -1,8 +1,8 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {SafeAreaView, View, ViewRow} from '../components/styled/View';
-import {Text} from '../components/styled/Text';
-import {ButtonBorderRadius} from '../components/styled/Button';
+import {SafeAreaView, View, ViewRow} from '../../components/styled/View';
+import {Text} from '../../components/styled/Text';
+import {ButtonBorderRadius} from '../../components/styled/Button';
 
 const SearchScreen = ({navigation}) => {
   return (

@@ -1,14 +1,9 @@
 import React from 'react';
-import {Linking} from 'react-native';
 import {View, ViewBorderRadius, ViewRow} from '../styled/View';
 import {Text} from '../styled/Text';
 import {ButtonBorderRadius} from '../styled/Button';
 
 const IssueItem = props => {
-  const onPressDetail = () => {
-    Linking.openURL(props.detail);
-  };
-
   return (
     <ViewBorderRadius
       marginTop={15}
@@ -30,7 +25,7 @@ const IssueItem = props => {
           </Text>
         </View>
         <View flex={1} alignItems="flex-end" marginLeft={5}>
-          <ButtonBorderRadius brTheme onPress={onPressDetail}>
+          <ButtonBorderRadius brTheme onPress={props.onPressDetail}>
             <Text ftTheme>Details</Text>
           </ButtonBorderRadius>
         </View>

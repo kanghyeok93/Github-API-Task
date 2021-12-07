@@ -75,7 +75,3 @@ export const ViewBorderRadius = styled(ViewBorder)(props => ({
 export const ViewRowBorderRadius = styled(ViewBorderRadius)({
   flexDirection: 'row',
 });
-
-export const ViewAbsoluteRadius = styled(ViewAbsolute)(props => ({
-  borderRadius: props.borderRadius || '5px',
-}));

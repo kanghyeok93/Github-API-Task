@@ -3,12 +3,15 @@ import * as GIT from './actions';
 import * as gitAPI from '../../../lib/api/git';
 import createRequestSaga from '../../../lib/createRequestSaga';
 
-const getRepo = createRequestSaga(GIT.GET_REPO, gitAPI.getRepo);
-const getRepoIssue = createRequestSaga(GIT.GET_REPO_ISSUE, gitAPI.getRepoIssue);
+const getRepoList = createRequestSaga(GIT.GET_REPO_LIST, gitAPI.getRepoList);
+const getRepoIssueList = createRequestSaga(
+  GIT.GET_REPO_ISSUE_LIST,
+  gitAPI.getRepoIssueList,
+);
 
 export default function* rootSaga() {
   yield [
-    yield takeLatest(GIT.GET_REPO, getRepo),
-    yield takeLatest(GIT.GET_REPO_ISSUE, getRepoIssue),
+    yield takeLatest(GIT.GET_REPO_LIST, getRepoList),
+    yield takeLatest(GIT.GET_REPO_ISSUE_LIST, getRepoIssueList),
   ];
 }

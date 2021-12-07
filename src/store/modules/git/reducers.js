@@ -11,16 +11,16 @@ const initialState = {
 
 const git = handleActions(
   {
-    [GIT.GET_REPO_SUCCESS]: (state, action) => {
+    [GIT.GET_REPO_LIST_SUCCESS]: (state, action) => {
       return produce(state, draft => {
         draft.repoList = action.payload.items;
         draft.totalCount = action.payload.total_count;
       });
     },
-    [GIT.GET_REPO_FAILED]: (state, action) => {
+    [GIT.GET_REPO_LIST_FAILED]: (state, action) => {
       return produce(state, draft => {});
     },
-    [GIT.CHANGE_REPO]: (state, action) => {
+    [GIT.CHANGE_REPO_LIST]: (state, action) => {
       return produce(state, draft => {
         draft.repoList = action.payload;
       });
@@ -35,15 +35,15 @@ const git = handleActions(
         draft.favoriteRepo = action.payload;
       });
     },
-    [GIT.GET_REPO_ISSUE_SUCCESS]: (state, action) => {
+    [GIT.GET_REPO_ISSUE_LIST_SUCCESS]: (state, action) => {
       return produce(state, draft => {
         draft.repoIssueList = action.payload;
       });
     },
-    [GIT.GET_REPO_ISSUE_FAILED]: (state, action) => {
+    [GIT.GET_REPO_ISSUE_LIST_FAILED]: (state, action) => {
       return produce(state, draft => {});
     },
-    [GIT.CHANGE_REPO_ISSUE]: (state, action) => {
+    [GIT.CHANGE_REPO_ISSUE_LIST]: (state, action) => {
       return produce(state, draft => {
         draft.repoIssueList = action.payload;
       });

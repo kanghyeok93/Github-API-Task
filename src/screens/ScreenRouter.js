@@ -4,10 +4,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useDispatch} from 'react-redux';
-import SearchScreen from './SearchScreen';
-import SearchDetailScreen from './SearchDetailScreen';
-import FavoriteScreen from './FavoriteScreen';
-import * as routeActions from '../store/modules/route/actions';
+import SearchScreen from './search/SearchScreen';
+import SearchDetailScreen from './search/SearchDetailScreen';
+import FavoriteScreen from './favorite/FavoriteScreen';
 import * as gitActions from '../store/modules/git/actions';
 import {getData} from '../utils/functions';
 
@@ -42,12 +41,7 @@ const Home = () => {
 const ScreenRouter = () => {
   const dispatch = useDispatch();
 
-  // 네비게이션 외부에서 현재 스크린에 해당하는 이름을 가져오기 위한 작업 함수
-  const onNavigationStateChanged = async state => {
-    state.routes[1]?.name
-      ? dispatch(routeActions.change_current_screen_name(state.routes[1]?.name))
-      : dispatch(routeActions.change_current_screen_name(''));
-
+  const onNavigationStateChanged = async () => {
     if (JSON.parse(await getData('repo'))) {
       dispatch(
         gitActions.change_favorite_repo(JSON.parse(await getData('repo'))),

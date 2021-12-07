@@ -5,9 +5,6 @@ import rootSaga from './modules/rootSaga';
 
 const reducers = combineReducers(modules);
 const rootReducer = (state, action) => {
-  if (action.type === 'user/USER_LOGOUT') {
-    state = undefined;
-  }
   return reducers(state, action);
 };
 const middlewares = [];

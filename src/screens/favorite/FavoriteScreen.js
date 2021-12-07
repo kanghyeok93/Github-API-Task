@@ -1,15 +1,15 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import RNPickerSelect from 'react-native-picker-select';
 import {shallowEqual, useDispatch, useSelector} from 'react-redux';
-import {ActivityIndicator, FlatList, StyleSheet} from 'react-native';
+import {ActivityIndicator, FlatList, Linking, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {SafeAreaView, View, ViewRow} from '../components/styled/View';
-import * as gitActions from '../store/modules/git/actions';
-import * as modalActions from '../store/modules/modal/actions';
-import IssueItem from '../components/git/IssueItem';
-import {Text} from '../components/styled/Text';
-import {Button} from '../components/styled/Button';
-import {getData, storeData} from '../utils/functions';
+import {SafeAreaView, View, ViewRow} from '../../components/styled/View';
+import * as gitActions from '../../store/modules/git/actions';
+import * as modalActions from '../../store/modules/modal/actions';
+import IssueItem from '../../components/git/IssueItem';
+import {Text} from '../../components/styled/Text';
+import {Button} from '../../components/styled/Button';
+import {getData, storeData} from '../../utils/functions';
 
 const FavoriteScreen = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const FavoriteScreen = () => {
   const {favoriteRepo, loading, repoIssueList} = useSelector(
     state => ({
       favoriteRepo: state.git.favoriteRepo,
-      loading: state.loading['git/GET_REPO_ISSUE'],
+      loading: state.loading['git/GET_REPO_ISSUE_LIST'],
       repoIssueList: state.git.repoIssueList,
     }),
     shallowEqual,
@@ -36,7 +36,7 @@ const FavoriteScreen = () => {
 
   const onValueChange = value => {
     setRepoIssueListState([]);
-    dispatch(gitActions.change_repo_issue([]));
+    dispatch(gitActions.change_repo_issue_list([]));
     setPage(1);
 
     const param = {
@@ -45,7 +45,7 @@ const FavoriteScreen = () => {
     };
     if (value) {
       setRepoName(value);
-      dispatch(gitActions.get_repo_issue(param));
+      dispatch(gitActions.get_repo_issue_list(param));
     }
   };
 
@@ -77,16 +77,24 @@ const FavoriteScreen = () => {
       setPage(page + 1);
 
       if (repoIssueList.length !== 0 && repoName) {
-        dispatch(gitActions.get_repo_issue(param));
+        dispatch(gitActions.get_repo_issue_list(param));
       }
       onEndReachedCalledDuringMomentum.current = true;
     }
   };
 
+  const onPressDetail = detail => {
+    Linking.openURL(detail);
+  };
+
   const keyExtractor = useCallback((item, index) => index, []);
   const renderRepoIssueList = useCallback(
     ({item}) => (
-      <IssueItem repo={repoName} title={item.title} detail={item.html_url} />
+      <IssueItem
+        repo={repoName}
+        title={item.title}
+        onPressDetail={() => onPressDetail(item.html_url)}
+      />
     ),
     [repoName],
   );
