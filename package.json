@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "postinstall": "node src/script/rn-fetch-blob_warning.js",
     "android:start": "npm install && react-native run-android",
-    "ios:start": "cd ios/ && pod install && cd .. && react-native run-ios"
+    "ios:start": "cd ios/ && pod install && cd .. && react-native run-ios",
+    "debug": "rndebugger-open"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.14",
@@ -53,7 +54,9 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.4.3",
     "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.2"
+    "react-native-debugger-open": "^0.3.25",
+    "react-test-renderer": "17.0.2",
+    "redux-devtools-extension": "^2.13.9"
   },
   "jest": {
     "preset": "react-native"
