@@ -4,10 +4,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useDispatch} from 'react-redux';
+import * as gitActions from '../store/modules/git/actions';
 import SearchScreen from './search/SearchScreen';
 import SearchDetailScreen from './search/SearchDetailScreen';
 import FavoriteScreen from './favorite/FavoriteScreen';
-import * as gitActions from '../store/modules/git/actions';
 import {getData} from '../utils/functions';
 
 const Stack = createNativeStackNavigator();
