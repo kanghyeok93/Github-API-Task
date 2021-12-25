@@ -3,7 +3,7 @@ import {View, ViewBorderRadius, ViewRow} from '../styled/View';
 import {Text} from '../styled/Text';
 import {ButtonBorderRadius} from '../styled/Button';
 
-const IssueItem = props => {
+const IssueItem = ({repo, title, onPressDetail}) => {
   return (
     <ViewBorderRadius
       marginTop={15}
@@ -15,17 +15,17 @@ const IssueItem = props => {
       flexDirection="column">
       <View>
         <Text bold ftTheme marginTop={10}>
-          {props.repo}
+          {repo}
         </Text>
       </View>
       <ViewRow justifyContent="space-between">
         <View flex={4}>
           <Text bold numberOfLines={1} marginBottom={10}>
-            {props.title}
+            {title}
           </Text>
         </View>
         <View flex={1} alignItems="flex-end" marginLeft={5}>
-          <ButtonBorderRadius brTheme onPress={props.onPressDetail}>
+          <ButtonBorderRadius brTheme onPress={onPressDetail}>
             <Text ftTheme>Details</Text>
           </ButtonBorderRadius>
         </View>
@@ -34,4 +34,4 @@ const IssueItem = props => {
   );
 };
 
-export default IssueItem;
+export default React.memo(IssueItem);

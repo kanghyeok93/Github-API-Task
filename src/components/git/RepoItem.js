@@ -4,7 +4,7 @@ import {View, ViewBorderRadius, ViewRow} from '../styled/View';
 import {ButtonBorderRadius} from '../styled/Button';
 import {Text} from '../styled/Text';
 
-const RepoItem = props => {
+const RepoItem = ({name, onPressOK}) => {
   return (
     <ViewBorderRadius
       height={60}
@@ -17,13 +17,13 @@ const RepoItem = props => {
       flexDirection="column">
       <ViewRow>
         <View flex={4} justifyContent="center">
-          <Text bold>{props.name}</Text>
+          <Text bold>{name}</Text>
         </View>
         <View flex={1} justifyContent="center">
           <ButtonBorderRadius
             paddingTop={10}
             paddingBottom={10}
-            onPress={props.onPressOK}>
+            onPress={onPressOK}>
             <Ionicons
               name="caret-forward-circle-outline"
               color="#3D58C0"
@@ -36,4 +36,4 @@ const RepoItem = props => {
   );
 };
 
-export default RepoItem;
+export default React.memo(RepoItem);
